@@ -1,35 +1,32 @@
 "use client"
 
 import { ColumnDef } from "@tanstack/react-table"
+
 import { CellAction } from "./cell-action"
 
 export type CategoryColumn = {
   id: string
-  name: string
-  billboardLabel: string
-  createdAt: string
+  name: string;
+  billboardLabel: string;
+  createdAt: string;
 }
-
-//Define una columna con un identificador actions que no usa un accessorKey sino que define una función para renderizar la celda.
-//La función cell recibe un objeto row y retorna el componente CellAction pasando como propiedad data el objeto original de la fila (row.original).
 
 export const columns: ColumnDef<CategoryColumn>[] = [
   {
     accessorKey: "name",
-    header: "Nombre",
+    header: "Name",
   },
   {
     accessorKey: "billboard",
-    header: "Cartelera",
+    header: "Billboard",
     cell: ({ row }) => row.original.billboardLabel,
   },
   {
     accessorKey: "createdAt",
-    header: "Fecha",
+    header: "Date",
   },
   {
     id: "actions",
-    cell: ({row}) => <CellAction data={row.original}/>
-  }
-  
-]
+    cell: ({ row }) => <CellAction data={row.original} />
+  },
+];
