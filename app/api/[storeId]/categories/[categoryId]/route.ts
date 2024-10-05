@@ -17,7 +17,7 @@ export async function GET(
         id: params.categoryId
       },
       include: {
-        billbaord: true
+        billboard: true,
       }
     });
   

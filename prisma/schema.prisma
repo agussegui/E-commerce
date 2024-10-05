@@ -46,7 +46,7 @@ model Category {
   storeId String
   store store @relation("StoreToCategory", fields: [storeId], references: [id])
   billboardId String
-  billbaord Billboard @relation(fields: [billboardId], references: [id])
+  billboard Billboard @relation(fields: [billboardId], references: [id])
   products Product[] @relation("CategoryToProduct")
   name String
   createdAt DateTime @default(now())
